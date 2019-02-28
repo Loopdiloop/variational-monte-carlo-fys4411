@@ -1,6 +1,7 @@
 #include "randomuniform.h"
 #include <iostream>
 #include <cassert>
+#include <random>
 #include "Math/random.h"
 #include "../particle.h"
 #include "../system.h"
@@ -42,6 +43,11 @@ void RandomUniform::setupInitialState() {
              * according to their index in the particles list (this is
              * obviously NOT a good idea).
              */
+
+            // Mersienne mt19937_64
+            using std::mt19937; //
+            srand(time(0));
+            position[j] = srand();
             position.push_back(i);
         }
         m_particles.push_back(new Particle());
