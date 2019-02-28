@@ -1,6 +1,7 @@
 #include "simplegaussian.h"
 #include <cmath>
 #include <cassert>
+#include <math.h>
 #include "wavefunction.h"
 #include "../system.h"
 #include "../particle.h"
@@ -21,7 +22,12 @@ double SimpleGaussian::evaluate(std::vector<class Particle*> particles) {
      * For the actual expression, use exp(-alpha * r^2), with alpha being the
      * (only) variational parameter.
      */
-    return 0;
+    //float psi = exp(-x**2/)
+
+    //particle[0].getPosition() ;
+    std::vector<double> r = particles[0]->getPosition();
+    float psi = exp(-m_parameters[0] *pow(2,2));
+    return psi;
 }
 
 double SimpleGaussian::computeDoubleDerivative(std::vector<class Particle*> particles) {
