@@ -22,11 +22,10 @@ double SimpleGaussian::evaluate(std::vector<class Particle*> particles) {
      * For the actual expression, use exp(-alpha * r^2), with alpha being the
      * (only) variational parameter.
      */
-    //float psi = exp(-x**2/)
 
     //particle[0].getPosition() ;
     std::vector<double> r = particles[0]->getPosition();
-    float psi = exp(-m_parameters[0] *pow(2,2));
+    double psi = exp(-m_parameters[0] *pow(r[0],2));
     return psi;
 }
 
@@ -39,5 +38,15 @@ double SimpleGaussian::computeDoubleDerivative(std::vector<class Particle*> part
      * This quantity is needed to compute the (local) energy (consider the
      * Schrödinger equation to see how the two are related).
      */
+
+    // Natural units. hbar=m=...=1
+    // Do I need the double derivative times the wavefunction or whaaaat?
+
+    //Try without.
+    std::vector<double> r = particles[0]->getPosition();
+    double DoubleDerivative = 1/(2*pow(m_parameters[0],2)) + (m_parameters[0]+1)*pow(r[0],2);
+
+
+
     return 0;
 }
