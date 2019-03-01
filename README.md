@@ -57,3 +57,29 @@ Here follows a suggestion for how you can work to complete the missing parts of 
 - Now the code should be functioning and you should see (somewhat) reasonable results. Try to set the oscillator frequency to 1 and calculate analytically the energy of the oscillator. Recall the form of the ground state wave function of the harmonic oscillator, and set the parameter alpha accordingly. What is the resulting energy?
 - If this energy is NOT correct, the last bit missing is to take a look at the computeAverages function in the Sampler class. What is missing here?
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
