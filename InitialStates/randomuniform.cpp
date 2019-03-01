@@ -45,7 +45,7 @@ void RandomUniform::setupInitialState() {
              */
 
             // Mersienne mt19937_64
-            using std::mt19937; //
+            std::mt19937; // add i header and stuff.
             srand(time(0));
             position[j] = srand();
             position.push_back(i);
