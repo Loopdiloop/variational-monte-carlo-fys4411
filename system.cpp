@@ -7,12 +7,22 @@
 #include "InitialStates/initialstate.h"
 #include "Math/random.h"
 
+#include <random>
+
 bool System::metropolisStep() {
     /* Perform the actual Metropolis step: Choose a particle at random and
      * change it's position by a random amount, and check if the step is
      * accepted by the Metropolis test (compare the wave function evaluated
      * at this new position with the one at the old position).
      */
+
+    // Choose random particle, one for now??
+    m_particles[particle]
+
+    // Change it's position by random amount (temp for accept/reject)
+
+    // Accept/reject change by metropolis test
+    // (compare wave function new med wave function old)
 
     return false;
 }
@@ -34,6 +44,9 @@ void System::runMetropolisSteps(int numberOfMetropolisSteps) {
          */
         m_sampler->sample(acceptedStep);
     }
+
+
+
     m_sampler->computeAverages();
     m_sampler->printOutputToTerminal();
 }
