@@ -45,9 +45,20 @@ void RandomUniform::setupInitialState() {
              */
 
             // Mersienne mt19937_64
-            using std::mt19937; //
-            srand(time(0));
-            position[j] = srand();
+            // FOUND GOO INFO AT
+            // https://diego.assencio.com/?index=6890b8c50169ef45b74db135063c227c
+            // ILU RANDOM PERSON OMG
+
+            std::random_device device; // Generate random seed
+            std::mt19937 generator(device()); // Initialize w/ random seed.
+            std::uniform_int_distribution<double> distribution(-1,1); // Distribution
+
+            //std::cout << distribution(generator) << std::endl;
+
+            //std::mt19937 generator; // add i header and stuff.
+            //generator.seed(4);
+            //srand(time(0));
+            position[j] = distribution(generator);
             position.push_back(i);
         }
         m_particles.push_back(new Particle());
