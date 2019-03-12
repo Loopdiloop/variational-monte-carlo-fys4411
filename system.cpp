@@ -17,7 +17,8 @@ bool System::metropolisStep() {
      */
 
     // Choose random particle, one for now??
-    m_particles[particle]
+    m_particles[1]; //Include random later :)
+
 
     // Change it's position by random amount (temp for accept/reject)
 
@@ -32,6 +33,7 @@ void System::runMetropolisSteps(int numberOfMetropolisSteps) {
     m_sampler                   = new Sampler(this);
     m_numberOfMetropolisSteps   = numberOfMetropolisSteps;
     m_sampler->setNumberOfMetropolisSteps(numberOfMetropolisSteps);
+
 
     for (int i=0; i < numberOfMetropolisSteps; i++) {
         bool acceptedStep = metropolisStep();

@@ -32,5 +32,10 @@ private:
     class InitialState*             m_initialState = nullptr;
     class Sampler*                  m_sampler = nullptr;
     std::vector<class Particle*>    m_particles = std::vector<class Particle*>();
+
+    //std::random_device device; // Generate random seed
+    //std::mt19937 generator(); // Initialize w/ random seed.
+    //std::uniform_int_distribution<int> distribution(0,m_particles); // Distribution
+    //int                             distribution;
 };
 
